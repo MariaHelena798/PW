@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela inicial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #dee9ff;
+        background-size: 2000px;
+        background-position: 40% 30%;
+        background-image: url("Imagens/fundo.png");
+        padding: 0px;
+        margin: 0px;
+        height: 100vh;
+        font-family: "Raleway", serif;
+      }
+
+      .traco {
+        background-color: #76a6d3;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 50px;
+      }
+
+      .traco .icone #mala {
+        position: relative;
+        bottom: -5px;
+        width: 100px;
+        height: 120px;
+        right: 170px;
+      }
+
+      .traco .icone #hosp {
+        position: relative;
+        top: 5px;
+        width: 100px;
+        height: 120px;
+        left: 220px;
+      }
+
+      .traco .icone #trans {
+        position: relative;
+        top: -1px;
+        left: 60px;
+        width: 100px;
+        height: 120px;
+      }
+
+      .traco .icone #aviao {
+        position: relative;
+        bottom: -5px;
+        right: 230px;
+        width: 100px;
+        height: 120px;
+      }
+
+      .traco .icone #login {
+        position: relative;
+        top: -1px;
+        left: 140px;
+        width: 100px;
+        height: 120px;
+      }
+
+      .traco .icone #logo {
+        align-self: flex-start;
+        position: absolute;
+        top: 15px;
+        width: 170px;
+        height: 190px;
+        right: 1700px;
+      }
+
+      label {
+        color: #101111;
+        display: block;
+        text-align: left;
+      }
+      input {
+        height: 30px;
+        width: 300px;
+        text-align: left;
+      }
+
+      input:hover {
+        transition: transform 0.3s ease;
+        transform: scale(1.3);
+      }
+      button:hover {
+        transition: transform 0.3s ease;
+        transform: scale(1.3);
+      }
+      button {
+        background-color: #2289e6;
+        color: white;
+        height: 40px;
+        width: 170px;
+        border: 5px;
+      }
+
+      .infor {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        max-width: 90%;
+        height: 80vh;
+        margin: 0 auto;
+        margin-top: -50px;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 40px;
+        color: #404040;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="traco">
+      <div class="icone">
+        <img id="hosp" src="Imagens/hosp.png" />
+        <img id="aviao" src="Imagens/aviao.png" />
+        <img id="mala" src="Imagens/mala.png" />
+        <img id="trans" src="Imagens/trans.png" />
+        <img id="login" src="Imagens/login.png" />
+        <img id="logo" src="Imagens/logo.png" />
+      </div>
+    </div>
+
+    <div class="infor">
+      <center>
+        <br />
+        <br />
+        <h1>Login</h1>
+        <p>Não tem uma conta? <a href="cadastro.htm">Cadastro</a></p>
+        <label>Nome ou Email </label>
+        <input type="text" placeholder="Nome ou Email" />
+        <br />
+        <br />
+        <label>Senha</label>
+        <input type="password" id="senha" placeholder="Senha" />
+        <br />
+        <br />
+        <label>Confirma Senha</label>
+        <input type="password" id="senhac" placeholder="Confirma Senha" />
+        <br />
+        <br />
+        <div class="enviar">
+          <p id="s"></p>
+          <button onclick="comparar()">Entrar</button>
+        </div>
+      </center>
+    </div>
+
+    <script>
+      function comparar() {
+        let senha = document.getElementById("senha").value;
+        let senhac = document.getElementById("senhac").value;
+        let paragrafo = document.getElementById("s");
+
+        if (senha !== senhac) {
+          paragrafo.innerHTML = "senha nao confirmada";
+        } else {
+          paragrafo.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
